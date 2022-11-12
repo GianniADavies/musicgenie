@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'music_genie',
+    'music_app.apps.MusicAppConfig',
 ]
 
 MIDDLEWARE = [
