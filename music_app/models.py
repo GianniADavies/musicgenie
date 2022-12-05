@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Artist(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField('',max_length=100, null=False)
@@ -8,7 +9,7 @@ class Artist(models.Model):
     website = models.CharField('',max_length=100)
     label = models.CharField('',max_length=200)
 
-    def __str__(self):
+    def str(self):
         return self.name
 
     class Meta:
@@ -24,17 +25,17 @@ class Song(models.Model):
     album = models.CharField(max_length=80, null=True)
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
 
-    def __str__(self):
+    def str(self):
         return self.title
 
     class Meta:
         verbose_name = "Song"
         verbose_name_plural = "Songs"
 
-@property
-def artistName(self):
-    return self.artist.name
+    @property
+    def artistName(self):
+        return self.artist.name
 
-@property
-def artistId(self):
-    return self.artist.id
+    @property
+    def artistId(self):
+        return self.artist.id
